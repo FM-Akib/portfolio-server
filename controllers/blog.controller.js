@@ -1,5 +1,6 @@
 import Blog from '../models/blogSchema.js';
-import { blogValidationSchema } from '../validations/blog.validation.js';
+import { blogValidationSchema } from '../validation/blog.validation.js';
+// import { blogValidationSchema } from '../validations/blog.validation.js';
 
 // Create
 export const createBlog = async (req, res) => {
@@ -20,6 +21,9 @@ export const createBlog = async (req, res) => {
 export const getAllBlogs = async (req, res) => {
   try {
     const blogs = await Blog.find().sort({ publication_date: -1 });
+    if (!blogs) {
+      return res.status(404).json({ message: 'No blog posts found' });
+    }
     res.json({ data: blogs });
   } catch (err) {
     res.status(500).json({ error: 'Internal Server Error' });

@@ -1,5 +1,5 @@
 import Certificate from '../models/certificateSchema.js';
-import { certificateValidationSchema } from '../validations/certificate.validation.js';
+import { certificateValidationSchema } from '../validation/certificate.validation.js';
 
 // Create
 export const createCertificate = async (req, res) => {

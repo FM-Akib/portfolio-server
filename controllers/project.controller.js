@@ -1,5 +1,5 @@
 import Project from '../models/projectsSchema.js';
-import { projectValidationSchema } from '../validations/project.validation.js';
+import projectValidationSchema from '../validation/project.validation.js';
 
 // Create a new project
 export const createProject = async (req, res) => {

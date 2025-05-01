@@ -1,5 +1,5 @@
 import Achievement from '../models/achievementSchema.js';
-import { achievementValidationSchema } from '../validations/achievement.validation.js';
+import { achievementValidationSchema } from '../validation/achievement.validation.js';
 
 // Create
 export const createAchievement = async (req, res) => {

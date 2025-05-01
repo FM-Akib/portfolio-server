@@ -1,5 +1,5 @@
 import ContactDetails from '../models/contactDetailsSchema.js';
-import { contactDetailsValidationSchema } from '../validations/contactDetails.validation.js';
+import { contactDetailsValidationSchema } from '../validation/contactDetails.validation.js';
 
 // Create
 export const createContactDetails = async (req, res) => {

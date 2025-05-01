@@ -1,5 +1,5 @@
 import Experience from '../models/experienceSchema.js';
-import { experienceValidationSchema } from '../validations/experience.validation.js';
+import { experienceValidationSchema } from '../validation/experience.validation.js';
 
 // Create
 export const createExperience = async (req, res) => {

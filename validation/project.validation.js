@@ -1,4 +1,4 @@
-const { z } = require('zod');
+import { z } from 'zod';
 
 const urlOptional = z.string().url().optional().or(z.literal(''));
 
