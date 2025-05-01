@@ -3,34 +3,39 @@ import mongoose from 'mongoose';
 
 const aboutSchema = new mongoose.Schema(
   {
-    full_name: {
+    name: {
       type: String,
       required: true,
       trim: true,
     },
-    professional_title: {
+    title: {
       type: String,
       required: true,
       trim: true,
     },
-    description_short: {
+    description: {
       type: String,
       required: true,
-      maxlength: 300,
     },
-    description_long: {
+    longDescription: {
       type: String,
     },
-    photo: {
+    image: {
       type: String,
     },
-    github_url: String,
-    linkedin_url: String,
-    facebook_url: String,
-    instagram_url: String,
-    codeforces_url: String,
-    codechef_url: String,
-    youtube_url: String,
+
+    resumeUrl: {
+      type: String,
+    },
+    socialLinks: {
+      github: String,
+      linkedin: String,
+      facebook: String,
+      instagram: String,
+      codeforces: String,
+      codechef: String,
+      youtube: String,
+    },
   },
   {
     timestamps: true,

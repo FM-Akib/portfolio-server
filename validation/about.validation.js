@@ -4,18 +4,21 @@ import { z } from 'zod';
 const urlOptional = z.string().url().optional().or(z.literal(''));
 
 const aboutValidationSchema = z.object({
-  full_name: z.string().min(1, 'Full name is required'),
-  professional_title: z.string().min(1, 'Professional title is required'),
-  description_short: z.string().min(1).max(300),
-  description_long: z.string().min(1),
-  photo: z.string().url('Photo must be a valid URL'),
-  github_url: urlOptional,
-  linkedin_url: urlOptional,
-  facebook_url: urlOptional,
-  instagram_url: urlOptional,
-  codeforces_url: urlOptional,
-  codechef_url: urlOptional,
-  youtube_url: urlOptional,
+  name: z.string().min(1, 'Full name is required'),
+  title: z.string().min(1, 'Professional title is required'),
+  description: z.string().min(1),
+  longDescription: z.string().optional().or(z.literal('')),
+  image: z.string().url('Photo must be a valid URL'),
+  resumeUrl: z.string().url('Resume must be a valid URL'),
+  socialLinks: z.object({
+    github: urlOptional,
+    linkedin: urlOptional,
+    facebook: urlOptional,
+    instagram: urlOptional,
+    codeforces: urlOptional,
+    codechef: urlOptional,
+    youtube: urlOptional,
+  }),
 });
 
 export default aboutValidationSchema;
