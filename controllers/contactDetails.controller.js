@@ -5,6 +5,19 @@ import { contactDetailsValidationSchema } from '../validation/contactDetails.val
 export const createContactDetails = async (req, res) => {
   try {
     const data = contactDetailsValidationSchema.parse(req.body);
+
+    const existing = await ContactDetails.findOne();
+    if (existing) {
+      const updated = await ContactDetails.findByIdAndUpdate(
+        existing._id,
+        data,
+        { new: true },
+      );
+      return res
+        .status(200)
+        .json({ message: 'Contact details updated', data: updated });
+    }
+
     const contact = new ContactDetails(data);
     await contact.save();
     res.status(201).json({ message: 'Contact details created', data: contact });

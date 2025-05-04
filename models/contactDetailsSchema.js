@@ -8,7 +8,7 @@ const contactDetailsSchema = new mongoose.Schema(
     linkedin_url: { type: String, required: true },
     github_url: { type: String, required: true },
     twitter_url: { type: String, required: true },
-    available_for: [{ type: String, required: true }],
+    available_for: { type: [String], default: [] },
   },
   { timestamps: true },
 );
