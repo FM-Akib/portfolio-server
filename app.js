@@ -9,7 +9,7 @@ import certificateRoutes from './routes/certificate.routes.js';
 import contactRoutes from './routes/contactDetails.routes.js';
 import experienceRoutes from './routes/experience.routes.js';
 import projectRoutes from './routes/project.routes.js';
-
+import skillCategoryRoutes from './routes/skills.route.js';
 dotenv.config();
 
 const app = express();
@@ -28,6 +28,7 @@ app.use('/api/achievements', achievementRoutes);
 app.use('/api/certificates', certificateRoutes);
 app.use('/api/blogs', blogRoutes);
 app.use('/api/contacts', contactRoutes);
+app.use('/api/skills', skillCategoryRoutes);
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
